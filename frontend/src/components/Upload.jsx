@@ -15,7 +15,7 @@ export default function Upload({ refresh, isLoggedIn }) {
     formData.append("file", file);
 
     try {
-      await axios.post("http://localhost:5000/api/upload", formData);
+     await axios.post(`${import.meta.env.VITE_API_URL}/upload`, formData);
       alert("Uploaded!");
       refresh();
     } catch (err) {
