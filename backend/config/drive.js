@@ -1,9 +1,10 @@
-const { google } = require("googleapis");
+import { google } from "googleapis";
+// import {google }from "googleapis";
 
 const oauth2Client = new google.auth.OAuth2(
   process.env.CLIENT_ID,
   process.env.CLIENT_SECRET,
-  `${import.meta.env.VITE_API_URL}/auth/google/callback`
+  `${process.env.BACKEND_URI}/auth/google/callback`
 );
 
 // store tokens globally (simple version)
@@ -30,8 +31,4 @@ const getDrive = () => {
   });
 };
 
-module.exports = {
-  getAuthUrl,
-  setCredentials,
-  getDrive
-};
+export { getAuthUrl, setCredentials, getDrive };
