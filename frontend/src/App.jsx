@@ -28,7 +28,7 @@ function App() {
 
       <FileList 
         searchQuery={searchQuery} 
-        key={refresh} 
+        key={refresh}
       />
     </div>
   );
